@@ -1,0 +1,24 @@
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+
+# VS generated
+.vs/
+
+# SQLite DB
+*.db
+
+# Backup / temp files
+*.bak
+*.tmp
+*.log
+
+# Packages
+packages/
