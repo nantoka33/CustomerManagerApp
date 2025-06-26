@@ -31,4 +31,13 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub LoadOrderList()
+        dgvOrders.DataSource = db.GetAllOrders()
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedTab Is TabPage2 Then
+            LoadOrderList()
+        End If
+    End Sub
 End Class
