@@ -26,14 +26,22 @@ Partial Class Form1
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
+        Me.dgvOrders = New System.Windows.Forms.DataGridView()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtName
@@ -65,18 +73,6 @@ Partial Class Form1
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "追加"
         Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'dgvCustomers
-        '
-        Me.dgvCustomers.AllowUserToOrderColumns = True
-        Me.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCustomers.Location = New System.Drawing.Point(168, 50)
-        Me.dgvCustomers.Name = "dgvCustomers"
-        Me.dgvCustomers.ReadOnly = True
-        Me.dgvCustomers.RowTemplate.Height = 21
-        Me.dgvCustomers.Size = New System.Drawing.Size(620, 388)
-        Me.dgvCustomers.TabIndex = 4
         '
         'Label1
         '
@@ -132,25 +128,83 @@ Partial Class Form1
         Me.btnSearch.Text = "検索"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(168, 53)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(620, 392)
+        Me.TabControl1.TabIndex = 11
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.dgvCustomers)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(612, 366)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.dgvOrders)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(612, 366)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'dgvCustomers
+        '
+        Me.dgvCustomers.AllowUserToOrderColumns = True
+        Me.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomers.Location = New System.Drawing.Point(0, 0)
+        Me.dgvCustomers.Name = "dgvCustomers"
+        Me.dgvCustomers.ReadOnly = True
+        Me.dgvCustomers.RowTemplate.Height = 21
+        Me.dgvCustomers.Size = New System.Drawing.Size(612, 363)
+        Me.dgvCustomers.TabIndex = 13
+        '
+        'dgvOrders
+        '
+        Me.dgvOrders.AllowUserToOrderColumns = True
+        Me.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvOrders.Location = New System.Drawing.Point(0, 1)
+        Me.dgvOrders.Name = "dgvOrders"
+        Me.dgvOrders.RowTemplate.Height = 21
+        Me.dgvOrders.Size = New System.Drawing.Size(612, 365)
+        Me.dgvOrders.TabIndex = 0
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dgvCustomers)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.txtName)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvOrders, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -160,11 +214,15 @@ Partial Class Form1
     Friend WithEvents txtPhone As TextBox
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents btnAdd As Button
-    Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnSearch As Button
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents dgvCustomers As DataGridView
+    Friend WithEvents dgvOrders As DataGridView
 End Class

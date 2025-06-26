@@ -22,3 +22,20 @@ obj/
 
 # Packages
 packages/
+
+
+# ビルド出力
+bin/
+obj/
+
+# VS設定
+.vs/
+*.user
+*.suo
+
+# SQLiteファイル（必要に応じて）
+*.db
+
+# その他
+*.log
+*.tmp
